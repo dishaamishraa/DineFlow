@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken'
 import pool from './db.js'
 
 const app = express()
-app.use(cors())
+app.use(cors({ origin: process.env.CLIENT_URL || true }))
 app.use(express.json())
 
 // ---------- AUTH HELPERS ----------
